@@ -1,0 +1,207 @@
+<html>
+
+<head>
+
+    <style type="text/css">
+        ul,
+        li {
+            list-style: none;
+        }
+
+        html,
+        body {
+            height: 100vh;
+            text-align: center;
+        }
+
+        img {
+            width: 100%
+        }
+
+        .div {
+            width: 100%
+        }
+
+        .div-d,
+        .div-u{
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+
+            margin: auto;
+        }
+
+        .div-d img{
+            height: 100%;
+        }
+        
+        .div-u {
+            z-index: 99;
+        }
+
+        .div-rel {}
+
+        #zz {
+            height: 150%;
+        }
+        
+
+        .content{
+            position: absolute;
+            bottom: 12%;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        .download {
+            margin: auto;
+            width: 800px;
+            height: 120px;
+            border-radius: 120px;
+            line-height: 120px;
+            text-align: center;
+            background: #14ACFF;
+            font-size: 48px;
+            color: #fff;
+        }
+
+        .type {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 60px;
+        }
+
+        .item{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 32px;
+            color: #1A1A1A;
+        }
+        
+        .item +.item {
+            margin-left: 100px;
+        }
+
+        .icon {
+            display: inline-block;
+            margin-right: 20px;
+            width: 56px;
+            height: 56px;
+        }
+
+        .APP {
+            background: url(./appstore@2x.png) no-repeat 100%;
+            background-size: 100% 100%;
+        }
+
+        .Android {
+            background: url(./android@2x.png) no-repeat 100%;
+            background-size: 100% 100%;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="div-rel">
+
+        <div class="ac_coupon-wrap div-d">
+
+
+            <img class="bg" src="./bg@2x.png" />
+
+            <br />
+
+            <div class="content">
+
+                <div class="download" onclick="to()">
+                    立即下载客户端
+                </div>
+                <ul class="type">
+                    <li class="item">
+                        <span class="icon APP"></span>
+                        APP Store
+                    </li>
+                    <li class="item">
+                        <span class="icon Android"></span>
+                        Android
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div id="white7" class="white000 div-u" style="display:none;">
+            <img id="zz" src="zz1.png" onclick="text('white7')" />
+        </div>
+
+    </div>
+</body>
+
+<script style="text/javascript">
+
+
+    var u = navigator.userAgent, app = navigator.appVersion;
+    var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //g
+    var isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+
+    function is_weixin() {
+        var ua = navigator.userAgent.toLowerCase();
+        if (ua.match(/MicroMessenger/i) == "micromessenger") {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    var isWeixin = is_weixin();
+
+    // alert("isAndroid"+ isAndroid)
+
+    // alert("isIos"+isIOS)
+
+    var targ = "";
+    if (isIOS) {
+        //targ = "https://itunes.apple.com/cn/app/%E8%82%AF%E5%BE%B7%E5%9F%BAkfc-%E5%AE%98%E6%96%B9%E7%89%88-%E4%BC%9A%E5%91%98%E4%BC%98%E6%83%A0%E5%88%B8%E5%92%8C%E5%AE%85%E6%80%A5%E9%80%81%E5%A4%96%E5%8D%96%E8%AE%A2%E9%A4%90/id587238847?mt=8";
+        targ = "https://itunes.apple.com/cn/app/%E5%B0%8F%E5%BE%B7%E7%A4%BE%E5%8C%BA/id1463572887?mt=8";
+    } else {
+        //targ = //"http://m.gdown.baidu.com/0b975d531302438f0450711802606ba8a45a71d5a2599535b635cbf5215f57988471bee945d2a0f960f1e26c162fb8d3c3ac265d//7bba4d4cdb930f78452441306131cc3ff2b5cc854055ca54e57bf9000b154334762e35796345b52ae6751159141cf0cf4368df61b7bbf3e58f9aff5a3a95433ea3//be310b6f3d3f3839a83fda50888fe4dcc6861296856f0dfaa7367ec9a90bde06cc94332e559c7e51daa605";
+        targ = "https://app.zkdntech.com/xiaodeshequ.apk";
+    }
+
+    function to() {
+
+        //alert(isWeixin);
+        //alert(isAndroid);
+
+        if (isWeixin && isAndroid) {
+            text('white7');
+        } else {
+            //text('white7');
+            location.href = targ;
+        }
+
+    }
+
+    function text(id) {
+        var div = document.getElementById(id);
+        if (div.style.display == 'block') {
+            div.style.display = 'none';
+        } else {
+            div.style.display = 'block';
+        }
+    }
+
+
+
+
+</script>
+
+</html>
