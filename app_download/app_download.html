@@ -2,106 +2,113 @@
 
 <head>
 
-    <style type="text/css">
-        *{
-            margin: 0;
-            padding: 0;
-        }
+<style type="text/css">
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    ul,
+    li {
+        list-style: none;
+    }
+
+    html,
+    body {
+        height: 100vh;
+        text-align: center;
+    }
+
+    img {
+        width: 100%
+    }
+
+    .div {
+        width: 100%
+    }
+
+    .div-d,
+    .div-u{
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        margin: auto;
+
+    }
+
+    .bg,
+    .div-u img{
+        height: 100%;
+    }
     
-        ul,
-        li {
-            list-style: none;
-        }
 
-        html,
-        body {
-            height: 100vh;
-            text-align: center;
-        }
+    .div-u {
+        z-index: 99;
+    }
+    
 
-        img {
-            width: 100%
-        }
+    .div-rel {}
 
-        .div {
-            width: 100%
-        }
+    .content{
+        position: absolute;
+        bottom: 12%;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
 
-        .div-d,
-        .div-u,
-        .div-u img{
-            overflow: hidden;
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
+    .download {
+        margin: auto;
+        width: 800px;
+        height: 120px;
+        border-radius: 120px;
+        line-height: 120px;
+        text-align: center;
+        background: #14ACFF;
+        font-size: 48px;
+        color: #fff;
+    }
 
-            margin: auto;
-        }
-        
-        .div-u {
-            z-index: 99;
-        }
+    .type {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 60px;
+    }
 
-        .div-rel {}
+    .item{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 32px;
+        color: #1A1A1A;
+    }
+    
+    .item +.item {
+        margin-left: 100px;
+    }
 
-        .content{
-            position: absolute;
-            bottom: 12%;
-            left: 0;
-            right: 0;
-            margin: auto;
-        }
+    .icon {
+        display: inline-block;
+        margin-right: 20px;
+        width: 56px;
+        height: 56px;
+    }
 
-        .download {
-            margin: auto;
-            width: 800px;
-            height: 120px;
-            border-radius: 120px;
-            line-height: 120px;
-            text-align: center;
-            background: #14ACFF;
-            font-size: 48px;
-            color: #fff;
-        }
+    .APP {
+        background: url(./appstore@2x.png) no-repeat 100%;
+        background-size: 100% 100%;
+    }
 
-        .type {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 60px;
-        }
-
-        .item{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 32px;
-            color: #1A1A1A;
-        }
-        
-        .item +.item {
-            margin-left: 100px;
-        }
-
-        .icon {
-            display: inline-block;
-            margin-right: 20px;
-            width: 56px;
-            height: 56px;
-        }
-
-        .APP {
-            background: url(./appstore@2x.png) no-repeat 100%;
-            background-size: 100% 100%;
-        }
-
-        .Android {
-            background: url(./android@2x.png) no-repeat 100%;
-            background-size: 100% 100%;
-        }
-    </style>
+    .Android {
+        background: url(./android@2x.png) no-repeat 100%;
+        background-size: 100% 100%;
+    }
+</style>
 
 </head>
 
